@@ -81,8 +81,10 @@ namespace TestCoreWebApi
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
-            app.UseApplicationInsightsRequestTelemetry();
+            app.UseCors(option => option.WithOrigins("http://frontend-harshaluatproject1.cloudapps.click2cloud.org/"));
+            app.UseMvc();
+            
+            /*app.UseApplicationInsightsRequestTelemetry();
 
             app.UseApplicationInsightsExceptionTelemetry();
 
@@ -91,7 +93,8 @@ namespace TestCoreWebApi
             var defName = i.DefaultPolicyName;
             app.UseCors(defName);
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvcWithDefaultRoute();*/
+            
             
         }
     }
