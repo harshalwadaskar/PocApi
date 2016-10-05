@@ -81,7 +81,7 @@ namespace TestCoreWebApi
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-            app.UseCors(option => option.WithOrigins("http://frontend-harshaluatproject1.cloudapps.click2cloud.org/"));
+            app.UseCors(option => option.WithOrigins("http://frontend-harshaluatproject1.cloudapps.click2cloud.org"));
             app.UseMvc();
             
             /*app.UseApplicationInsightsRequestTelemetry();
